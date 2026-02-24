@@ -1,7 +1,5 @@
 # Governance (v0.1) — Open Benchmark: Implementable Asset Pricing + Covariance Forecast Track
 
-> 中文说明（简版）：本项目按“开放基准 + 多机构共建 + 非排他治理”设计。任何机构可作为 Founding Partner/节点参与，但项目不归属于任何单一机构。规则、评测与署名按公开治理流程执行。
-
 ## 1. Mission
 Build a community-adopted common-task benchmark that bridges academic research and implementable quant practice via:
 - standardized datasets/protocols,
