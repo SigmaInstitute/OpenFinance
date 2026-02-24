@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Open CTF Demo — Leaderboard</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand"><a href="index.html">Open CTF Demo</a></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="rules.html">Rules</a>
+        <a href="dataset-access.html">Dataset Access</a>
+        <a href="submit.html">Submit</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    
+<div class="hero">
+  <h1>Model Leaderboard (Demo)</h1>
+  <p>
+    This page renders from <span class="mono">docs/data/leaderboard.json</span>. Update that file to refresh the rankings.
+    In a real platform, results are written by the scoring pipeline after sandbox execution.
+  </p>
+</div>
+
+<div class="card" id="lb-error" style="display:block;"></div>
+
+<div class="card">
+  <h2>Leaderboard</h2>
+  <div id="lb-meta"></div>
+  <div class="table-wrap" style="margin-top:12px;">
+    <table>
+      <thead>
+        <tr>
+          <th class="num">Rank</th>
+          <th>Model</th>
+          <th>Lang</th>
+          <th>Status</th>
+          <th class="num">Sharpe</th>
+          <th class="num">Ann. Return</th>
+          <th class="num">Ann. Vol</th>
+          <th class="num">Max DD</th>
+          <th class="num">Year</th>
+        </tr>
+      </thead>
+      <tbody id="lb-body"></tbody>
+    </table>
+  </div>
+
+  <p class="small" style="margin-top:10px;" id="lb-note"></p>
+</div>
+
+<div style="height:14px;"></div>
+
+<div class="card">
+  <h2>Submission pipeline (demo queue)</h2>
+  <p class="small">Typical phases: <span class="badge info">Submitted</span> → <span class="badge warn">Validating</span> → <span class="badge ok">Scoring</span> → <span class="badge danger">Failed</span></p>
+
+  <div class="table-wrap" style="margin-top:12px;">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Lang</th>
+          <th>Status</th>
+          <th>Progress</th>
+          <th>Message</th>
+          <th>Submitted</th>
+        </tr>
+      </thead>
+      <tbody id="queue-body"></tbody>
+    </table>
+  </div>
+</div>
+
+    <div class="footer">
+      <div>© <span id="year"></span> Open CTF Demo. This is a minimal, static GitHub Pages demo for showcasing an online benchmark workflow.</div>
+      <div class="small" style="margin-top:6px;">
+        Suggested next step: connect this front-end to a sandboxed evaluation runner (Docker/Apptainer) and a metrics engine.
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/leaderboard.js"></script>
+</body>
+</html>

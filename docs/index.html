@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Open CTF Demo — Home</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand"><a href="index.html">Open CTF Demo</a></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="rules.html">Rules</a>
+        <a href="dataset-access.html">Dataset Access</a>
+        <a href="submit.html">Submit</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    
+<div class="hero">
+  <h1>Online Benchmark Demo</h1>
+  <p>
+    A fastest-possible prototype that mimics a “Common Task Framework” leaderboard site:
+    rules → dataset access → submissions → leaderboard. Designed to be hosted on GitHub Pages.
+  </p>
+</div>
+
+<div class="grid two">
+  <div class="card">
+    <h2>Tracks (Demo)</h2>
+    <p><span class="badge info">Implementable Asset Pricing</span> Submit monthly portfolio weights. The platform scores net-of-cost performance under a standardized liquidity constraint and transaction cost model (in the full system).</p>
+    <p><span class="badge info">Covariance Forecast</span> Submit next-period covariance forecasts. The platform evaluates statistical loss and decision-aware utility (in the full system).</p>
+    <div class="kv">
+      <span>Hosting: <code>GitHub Pages</code></span>
+      <span>Data feed: <code>data/leaderboard.json</code></span>
+      <span>Stack: <code>HTML + CSS + JS</code></span>
+    </div>
+  </div>
+  <div class="card">
+    <h2>What this demo includes</h2>
+    <p>• A clean leaderboard page reading a JSON file.</p>
+    <p>• Rule pages & dataset access page (static text).</p>
+    <p>• A submission workflow suggestion (GitHub PR/Issue, no backend).</p>
+    <p class="small">In the real platform, submissions are executed in a network-disabled sandbox and scored on a private holdout test set.</p>
+  </div>
+</div>
+
+<div style="height:14px;"></div>
+
+<div class="card">
+  <h2>Quick links</h2>
+  <p><a href="leaderboard.html">View the demo leaderboard →</a></p>
+  <p><a href="submit.html">See the submission instructions →</a></p>
+  <p class="small">Tip: to update results, edit <span class="mono">docs/data/leaderboard.json</span> and push to GitHub.</p>
+</div>
+
+    <div class="footer">
+      <div>© <span id="year"></span> Open CTF Demo. This is a minimal, static GitHub Pages demo for showcasing an online benchmark workflow.</div>
+      <div class="small" style="margin-top:6px;">
+        Suggested next step: connect this front-end to a sandboxed evaluation runner (Docker/Apptainer) and a metrics engine.
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/common.js"></script>
+  
+</body>
+</html>
