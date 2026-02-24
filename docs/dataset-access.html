@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenFinance — Dataset Access</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand"><a href="index.html">OpenFinance</a></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="rules.html">Rules</a>
+        <a href="governance.html">Governance</a>
+        <a href="dataset-access.html">Dataset Access</a>
+        <a href="submit.html">Submit</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    
+<div class="hero">
+  <h1>Dataset Access</h1>
+  <p>
+    Many finance datasets cannot be redistributed. OpenFinance is designed for compliance-first benchmarking via
+    standardized tables, versioning, and a private holdout test set.
+  </p>
+</div>
+
+<div class="card">
+  <h2>Recommended approach</h2>
+  <p><span class="badge info">WRDS-gated tables</span> Provide scripts and a data dictionary for participants to extract standardized tables from WRDS (or a partner’s licensed data platform).</p>
+  <p><span class="badge info">Private test set</span> Keep the holdout test set on the evaluation server. Participants submit code/models; the platform executes them next to the data.</p>
+  <p><span class="badge info">Versioning</span> Publish dataset version numbers (e.g., v0.1, v0.2) and pin train/validation splits.</p>
+</div>
+
+<div style="height:14px;"></div>
+
+<div class="card">
+  <h2>Example: table schema</h2>
+  <div class="code">features: (date, asset_id, x1, x2, ..., xP)
+returns:   (date, asset_id, ret)
+liquidity: (date, asset_id, adv, spread_proxy, amihud, ...)</div>
+  <p class="small">For the MVP website, no data is bundled here. The full platform uses a model-to-data runner and keeps test data private.</p>
+</div>
+
+    <div class="footer">
+      <div>© <span id="year"></span> OpenFinance.</div>
+      <div class="small" style="margin-top:6px;">
+        Data access details depend on licensing and partner agreements.
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/common.js"></script>
+  
+</body>
+</html>

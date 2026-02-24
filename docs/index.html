@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenFinance — Home</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand"><a href="index.html">OpenFinance</a></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="rules.html">Rules</a>
+        <a href="governance.html">Governance</a>
+        <a href="dataset-access.html">Dataset Access</a>
+        <a href="submit.html">Submit</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    
+<div class="hero">
+  <h1>OpenFinance</h1>
+  <p>
+    An open, community-built benchmarking platform for <strong>Implementable Asset Pricing</strong>
+    and <strong>Covariance Forecasting</strong>.
+  </p>
+  <p class="small">
+    This repository is an MVP website that can be hosted on GitHub Pages.
+    The long-term goal is a fully automated <em>model-to-data</em> evaluation system with a private holdout test set.
+  </p>
+</div>
+
+<div class="grid two">
+  <div class="card">
+    <h2>Vision</h2>
+    <p>
+      <strong>Bridge the gap between academia and practice</strong> by enabling apples-to-apples comparisons of
+      models under the <strong>same data</strong>, <strong>same preprocessing</strong>, and a more
+      <strong>realistic evaluation</strong> protocol.
+    </p>
+    <p>
+      OpenFinance aims to become shared research infrastructure: a stable protocol, transparent metrics,
+      reproducible submissions, and a public leaderboard—so results are comparable and cumulative.
+    </p>
+  </div>
+  <div class="card">
+    <h2>Why OpenFinance</h2>
+    <p>• <strong>Fair comparison</strong>: standardized dataset schema, splits, and scoring.</p>
+    <p>• <strong>Realism</strong>: implementability-first evaluation (liquidity constraints &amp; transaction costs).</p>
+    <p>• <strong>Reproducibility</strong>: containerized, sandboxed runs with pinned dependencies and run logs.</p>
+    <p>• <strong>Open collaboration</strong>: non-exclusive, multi-institution governance and contribution-based credit.</p>
+    <p class="small">See <a href="governance.html">Governance</a> for roles, RFC changes, and credit.</p>
+  </div>
+</div>
+
+<div style="height:14px;"></div>
+
+<div class="grid two">
+  <div class="card">
+    <h2>Tracks</h2>
+    <p><span class="badge info">Implementable Asset Pricing</span> Participants submit periodic portfolio weights.
+      The platform evaluates <strong>net-of-cost</strong> performance under a standardized liquidity and transaction cost model.</p>
+    <p><span class="badge info">Covariance Forecast</span> Participants submit covariance forecasts.
+      The platform evaluates statistical losses and decision-aware risk outcomes.</p>
+    <div class="kv">
+      <span>Website: <code>GitHub Pages</code></span>
+      <span>Leaderboard feed: <code>docs/data/leaderboard.json</code></span>
+      <span>Stack: <code>HTML + CSS + JS</code></span>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Quick links</h2>
+    <p><a href="leaderboard.html">View the leaderboard →</a></p>
+    <p><a href="rules.html">Read the rules →</a></p>
+    <p><a href="governance.html">Governance →</a></p>
+    <p><a href="submit.html">Submission instructions →</a></p>
+    <p class="small">Tip (MVP): update results by editing <span class="mono">docs/data/leaderboard.json</span> and pushing to GitHub.</p>
+  </div>
+</div>
+
+<div style="height:14px;"></div>
+
+<div class="card">
+  <h2>Downloads</h2>
+  <p>• <a href="downloads/GOVERNANCE_v0.1.md">Governance (v0.1)</a></p>
+  <p>• <a href="downloads/Collaboration_Proposal_Implementable_Asset_Pricing_and_Covariance_Forecast_CTF_v0.1.docx">Collaboration proposal (v0.1, DOCX)</a></p>
+  <p>• <a href="downloads/CTF%20%E4%BB%8B%E7%BB%8D.docx">CTF 介绍（DOCX）</a></p>
+  <p class="small">These files are included in this repository for sharing with partners and early contributors.</p>
+</div>
+
+    <div class="footer">
+      <div>© <span id="year"></span> OpenFinance.</div>
+      <div class="small" style="margin-top:6px;">
+        MVP website on GitHub Pages. Next step: connect to a sandboxed evaluation runner (Docker/Apptainer) and a metrics engine.
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/common.js"></script>
+  
+</body>
+</html>

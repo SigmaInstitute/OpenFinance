@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenFinance — Rules</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand"><a href="index.html">OpenFinance</a></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="rules.html">Rules</a>
+        <a href="governance.html">Governance</a>
+        <a href="dataset-access.html">Dataset Access</a>
+        <a href="submit.html">Submit</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    
+<div class="hero">
+  <h1>Rules</h1>
+  <p>
+    OpenFinance follows a Common Task Framework (CTF) philosophy: strict temporal integrity, standardized inputs/outputs,
+    and reproducible submissions.
+  </p>
+</div>
+
+<div class="card">
+  <h2>Rule 1 — Temporal integrity</h2>
+  <p>At time <span class="mono">t</span>, your model may only use information available at or before <span class="mono">t</span>. No look-ahead, no revisions, no peeking at future characteristics or returns.</p>
+</div>
+
+<div style="height:14px;"></div>
+
+<div class="card">
+  <h2>Rule 2 — Algorithmic feature selection</h2>
+  <p>Any feature engineering or feature selection must be programmatic and determined only from training data (or past data within a rolling window). Manual cherry-picking based on knowledge of future performance is not allowed.</p>
+</div>
+
+<div style="height:14px;"></div>
+
+<div class="card">
+  <h2>Rule 3 — Data sources</h2>
+  <p>Only the benchmark dataset is permitted. External data sources (macro indicators, alternative data, web-scraped signals, proprietary datasets) are prohibited unless the track explicitly allows them.</p>
+</div>
+
+<div style="height:14px;"></div>
+
+<div class="card">
+  <h2>Rule 4 — Reproducibility</h2>
+  <p>Submissions must be fully reproducible:</p>
+  <p>• Python: provide <span class="mono">requirements.txt</span> or <span class="mono">pyproject.toml</span> with pinned versions</p>
+  <p>• R: provide <span class="mono">renv.lock</span></p>
+  <p class="small">In the full platform, code runs in a network-disabled sandbox (e.g., Docker/Apptainer) with time/memory limits.</p>
+</div>
+
+<div style="height:14px;"></div>
+
+<div class="card">
+  <h2>Rule 5 — Implementability (Track A)</h2>
+  <p>
+    Implementable Asset Pricing is evaluated <strong>net of transaction costs</strong> under a standardized cost model and liquidity constraints.
+    Participants may not override the platform’s cost accounting.
+  </p>
+</div>
+
+    <div class="footer">
+      <div>© <span id="year"></span> OpenFinance.</div>
+      <div class="small" style="margin-top:6px;">
+        Rules and protocol may evolve via a transparent RFC process (see Governance).
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/common.js"></script>
+  
+</body>
+</html>

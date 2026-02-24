@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenFinance — Submit</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand"><a href="index.html">OpenFinance</a></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="rules.html">Rules</a>
+        <a href="governance.html">Governance</a>
+        <a href="dataset-access.html">Dataset Access</a>
+        <a href="submit.html">Submit</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+<div class="hero">
+  <h1>Submission format</h1>
+  <p>
+    During the pilot, submissions are accepted via GitHub (PR or Issue). The format below is designed to match a future
+    automated <em>model-to-data</em> runner: your package is executed in a sandbox next to the private holdout test set.
+  </p>
+</div>
+
+<div class="grid two">
+  <div class="card">
+    <h2>Submission package</h2>
+    <p>Submit a single folder (or zip) with the following structure:</p>
+    <div class="code">submissions/&lt;team&gt;/&lt;YYYY-MM-DD&gt;/
+├── submission.json
+├── run.py              (or run.R)
+├── requirements.txt    (or environment.yml / renv.lock)
+└── README.md           (optional: methodology summary)</div>
+
+    <p class="small"><strong>Key idea:</strong> keep everything needed for reproducibility inside the package.
+      The evaluation runner installs dependencies, executes <span class="mono">run.py</span>, and collects outputs.</p>
+  </div>
+
+  <div class="card">
+    <h2>submission.json (required)</h2>
+    <p>Metadata used for identification, governance credit, and audit trails.</p>
+    <div class="code">{
+  "team": "Your Team",
+  "model_name": "My Model",
+  "track": "implementable_asset_pricing" | "covariance_forecast",
+  "language": "python" | "r",
+  "dataset_version": "v0.1",
+  "contact": "name@domain.com",
+  "description": "One-paragraph summary (optional)",
+  "license": "MIT"  
+}</div>
+    <p class="small">In a full platform, this manifest is stored with your run logs and hashes.</p>
+  </div>
+</div>
+
+<div style="height:14px;"></div>
+
+<div class="card">
+  <h2>Track outputs</h2>
+  <p><span class="badge info">Implementable Asset Pricing</span>
+    Your script must output a <span class="mono">weights.csv</span> with portfolio weights at each rebalancing date.</p>
+  <div class="code"># weights.csv (illustrative)
+date,asset_id,weight
+2024-01-31,00003210,0.0015
+2024-01-31,00007890,-0.0007
+...</div>
+
+  <p><span class="badge info">Covariance Forecast</span>
+    Your script must output a <span class="mono">covariance.npz</span> (or <span class="mono">covariance.csv</span>) containing the next-period covariance forecast (Sigma_hat for t+1).
+    The exact I/O contract is defined in the track spec and released baselines.</p>
+
+  <p class="small">For both tracks, <strong>the platform computes scoring</strong> (including transaction costs / constraints where applicable). Participants should not self-report metrics.</p>
+</div>
+
+<div style="height:14px;"></div>
+
+<div class="grid two">
+  <div class="card">
+    <h2>Checklist (before you submit)</h2>
+    <p>Use this to reduce failed runs and ensure comparability:</p>
+    <div class="prose">
+      <ul>
+        <li><strong>No external data.</strong> Use only the official dataset/tables for the track.</li>
+        <li><strong>Temporal integrity.</strong> At time t, only information available at or before t is used.</li>
+        <li><strong>Reproducible environment.</strong> Pin dependencies (<span class="mono">requirements.txt</span>/<span class="mono">renv.lock</span>).</li>
+        <li><strong>Determinism.</strong> Set random seeds where applicable.</li>
+        <li><strong>Runtime constraints.</strong> Ensure your code runs within typical limits (CPU/memory/time).</li>
+        <li><strong>Clean outputs.</strong> Write outputs to the expected filenames with valid formats.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Pilot submission workflow (no backend)</h2>
+    <p><strong>Preferred:</strong> submit via Pull Request.</p>
+    <p class="small">1) Fork the repo → 2) Add your package under <span class="mono">submissions/&lt;team&gt;/&lt;YYYY-MM-DD&gt;/</span> → 3) Open a PR.</p>
+
+    <p style="margin-top:10px;"><strong>Alternative:</strong> submit via GitHub Issue.</p>
+    <p class="small">Open an issue titled <span class="mono">[Submission] Model Name</span> and attach (or link) a zip of your submission package.</p>
+
+    <p class="small" style="margin-top:10px;">Maintainers run scoring in a sandbox and publish results by updating <span class="mono">docs/data/leaderboard.json</span>.</p>
+  </div>
+</div>
+
+<div style="height:14px;"></div>
+
+<div class="card">
+  <h2>Common reasons for failure</h2>
+  <p>• Missing dependencies / unpinned versions</p>
+  <p>• Writing outputs to the wrong path or filename</p>
+  <p>• Using future information (look-ahead leakage)</p>
+  <p>• Relying on network access (runner is network-disabled in production)</p>
+</div>
+
+    <div class="footer">
+      <div>© <span id="year"></span> OpenFinance.</div>
+      <div class="small" style="margin-top:6px;">
+        Pilot: GitHub-based submissions. Production: sandboxed execution + private holdout testing.
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/common.js"></script>
+</body>
+</html>

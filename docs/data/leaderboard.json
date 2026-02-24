@@ -1,0 +1,76 @@
+{
+  "updated_at": "2026-02-24",
+  "dataset_version": "v0.1",
+  "vol_standardization": 0.1,
+  "note": "For comparability, each return series can be rescaled to a common ex-post annualized volatility (e.g., 10%). This does not change Sharpe ratios because it multiplies the entire return series by a constant.",
+  "entries": [
+    {
+      "rank": 1,
+      "model_name": "Ridge Tilt Portfolio",
+      "author": "TM",
+      "language": "Python",
+      "status": "Scored",
+      "sharpe": 0.589,
+      "ann_return": 0.0589,
+      "ann_vol": 0.1,
+      "max_drawdown": -0.3408,
+      "year": 2024
+    },
+    {
+      "rank": 2,
+      "model_name": "Ensemble Model",
+      "author": "Lu Li",
+      "language": "Python",
+      "status": "Scored",
+      "sharpe": 0.5453,
+      "ann_return": 0.0545,
+      "ann_vol": 0.1,
+      "max_drawdown": -0.1915,
+      "year": 2024
+    },
+    {
+      "rank": 3,
+      "model_name": "Elasticnet + XGBoost",
+      "author": "DU",
+      "language": "Python",
+      "status": "Scored",
+      "sharpe": 0.4995,
+      "ann_return": 0.05,
+      "ann_vol": 0.1,
+      "max_drawdown": -0.4483,
+      "year": 2024
+    },
+    {
+      "rank": 4,
+      "model_name": "Benchmark: Equal-weight portfolio",
+      "author": "Benchmark",
+      "language": "Python",
+      "status": "Scored",
+      "sharpe": 0.4912,
+      "ann_return": 0.0491,
+      "ann_vol": 0.1,
+      "max_drawdown": -0.382,
+      "year": 2024
+    }
+  ],
+  "queue": [
+    {
+      "model_name": "Neural Net with SR-Validation",
+      "author": "PK R",
+      "language": "Python",
+      "status": "Submitted",
+      "progress": 0,
+      "message": "Waiting for validation",
+      "submitted": "4 days ago"
+    },
+    {
+      "model_name": "Adaptive Ensemble with Dynamic Risk Management",
+      "author": "Angikar Ghosal",
+      "language": "Python",
+      "status": "Scoring",
+      "progress": 53,
+      "message": "Container image ready; evaluating on holdout test set",
+      "submitted": "20 hours ago"
+    }
+  ]
+}
